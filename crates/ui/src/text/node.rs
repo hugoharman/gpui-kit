@@ -924,7 +924,11 @@ impl Node {
                                 if last_not_list {
                                     if let Some(item_item) = items.last_mut() {
                                         item_item.extend(vec![
-                                            div().overflow_hidden().child(text).into_any_element(),
+                                            div()
+                                                .w_full()
+                                                .overflow_hidden()
+                                                .child(text)
+                                                .into_any_element(),
                                         ]);
                                         continue;
                                     }
@@ -966,7 +970,7 @@ impl Node {
                                                     }),
                                             )
                                         })
-                                        .child(div().overflow_hidden().child(text)),
+                                        .child(div().flex_1().overflow_hidden().child(text)),
                                 );
                             }
                             Node::List { .. } => {
